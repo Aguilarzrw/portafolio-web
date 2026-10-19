@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>aguidev | Portafolio</title>
+<meta name="description" content="aguidev — Reyniel Aguilar, diseño y desarrollo web a medida: landing pages, sitios multipágina, portafolios y tiendas online.">
+<link rel="stylesheet" href="css/styles.css?v=2">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="#inicio" class="logo">agui<span>dev</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#projects">Proyectos</a>
+      <a href="#services">Servicios</a>
+      <a href="#about">Sobre mí</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section id="inicio" class="hero">
+  <!-- Garabatos estilo Jinx: carita con ojos en X y una X -->
+  <svg class="hero-doodle" viewBox="0 0 200 200" aria-hidden="true">
+    <path d="M100 18c45 2 80 36 80 82s-36 82-82 80S18 144 20 98 56 16 104 20" />
+    <path d="M58 70l22 22M80 70L58 92M122 68l22 22M144 68l-22 22" />
+    <path d="M52 124c20 30 76 34 98 0M66 134l-4 14M86 140l-2 16M108 141l2 15M128 136l5 14" />
+  </svg>
+  <svg class="hero-doodle hero-doodle--x" viewBox="0 0 100 100" aria-hidden="true">
+    <path d="M14 18l72 66M84 14L18 86" />
+  </svg>
+
+  <div class="container hero__inner">
+    <div class="hero__intro">
+      <h1 class="hero__title" data-glitch>
+        <span class="hero__hi">Hola, soy Reyniel.</span>
+        Hago sitios web que no pasan desapercibidos.
+      </h1>
+      <p class="hero__text">
+        Diseño y desarrollo webs a medida para marcas, artistas y negocios:
+        rápidas, adaptadas al celular y listas para que te contacten.
+      </p>
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary">Ver proyectos</a>
+        <a href="#contact" class="btn btn--ghost">Cotizar mi web</a>
+      </div>
+    </div>
+
+    <a href="#projects" class="hero__stack" aria-label="Ver proyectos">
+      <img class="hero__shot hero__shot--back" src="assets/img/proyecto-ranchera.jpg" alt="" width="1200" height="630">
+      <img class="hero__shot hero__shot--front" src="assets/img/proyecto-bramdon.jpg" alt="" width="1200" height="630">
+      <span class="hero__sticker">¡2 sitios en vivo!</span>
+    </a>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section__title" data-flash>Proyectos</h2>
+
+    <article class="case" data-flash>
+      <a class="case__media" href="https://aguilarzrw.github.io/bramdon-portafolio/" target="_blank" rel="noopener">
+        <span class="case__bar"><i></i><i></i><i></i>aguilarzrw.github.io/bramdon-portafolio</span>
+        <img src="assets/img/proyecto-bramdon.jpg" alt="Portada del portafolio de Bramdon Aguilar, Creative Producer" width="1200" height="630" loading="lazy">
+      </a>
+      <div class="case__body">
+        <p class="case__type">Portafolio audiovisual</p>
+        <h3>Bramdon Aguilar</h3>
+        <p>Portafolio para un productor creativo de Maracay. Portada con video
+           de fondo, galerías de proyectos filtrables, carrusel de marcas y
+           videos de lanzamiento de YouTube integrados.</p>
+        <ul class="case__tags">
+          <li>Diseño UI</li><li>HTML, CSS y JS</li><li>Video y galerías</li><li>SEO</li><li>Cloudflare</li>
+        </ul>
+        <a class="btn btn--primary" href="https://aguilarzrw.github.io/bramdon-portafolio/" target="_blank" rel="noopener">Ver sitio en vivo</a>
+      </div>
+    </article>
+
+    <article class="case case--flip" data-flash>
+      <a class="case__media" href="https://elprincipedelaranchera.com/" target="_blank" rel="noopener">
+        <span class="case__bar"><i></i><i></i><i></i>elprincipedelaranchera.com</span>
+        <img src="assets/img/proyecto-ranchera.jpg" alt="Portada del sitio de Ricardo Velasco, El Príncipe De La Ranchera" width="1200" height="630" loading="lazy">
+      </a>
+      <div class="case__body">
+        <p class="case__type">Sitio para artista musical</p>
+        <h3>Ricardo Velasco, El Príncipe De La Ranchera</h3>
+        <p>Web oficial de un mariachi en Maracay. Presenta sus shows
+           (serenatas, Mariachi Show y Banda Show) y lleva las reservas
+           directo a WhatsApp. Con dominio propio y páginas legales.</p>
+        <ul class="case__tags">
+          <li>Landing page</li><li>Reservas por WhatsApp</li><li>Dominio propio</li><li>SEO local</li><li>Cloudflare</li>
+        </ul>
+        <a class="btn btn--primary" href="https://elprincipedelaranchera.com/" target="_blank" rel="noopener">Ver sitio en vivo</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="services" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title" data-flash>Servicios</h2>
+    <p class="section__text">
+      Cada proyecto se cotiza a medida según lo que necesites. Estos son los
+      formatos más comunes:
+    </p>
+
+    <div class="services" data-flash>
+      <article class="service service--pink">
+        <h3>Landing page</h3>
+        <p>Una sola página enfocada en que el visitante te escriba, compre o reserve.</p>
+        <p class="service__meta">Para lanzar un negocio, servicio o evento. Entrega en 1 a 2 semanas.</p>
+      </article>
+      <article class="service service--blue">
+        <h3>Sitio web multipágina</h3>
+        <p>Web corporativa con varias secciones: nosotros, servicios, portafolio, blog y contacto.</p>
+        <p class="service__meta">Para empresas, marcas y profesionales. Entrega en 3 a 5 semanas.</p>
+      </article>
+      <article class="service service--purple">
+        <h3>Portafolio web</h3>
+        <p>Tu trabajo en primer plano: galerías, videos y una forma clara de contratarte.</p>
+        <p class="service__meta">Para creativos, artistas y freelancers. Entrega en 1 a 3 semanas.</p>
+      </article>
+      <article class="service service--pink">
+        <h3>Tienda online</h3>
+        <p>Catálogo, carrito y pagos para vender tus productos desde tu propio sitio.</p>
+        <p class="service__meta">Para negocios que quieren vender por internet. Entrega en 4 a 8 semanas.</p>
+      </article>
+      <article class="service service--blue">
+        <h3>Aplicación web a medida</h3>
+        <p>Sistemas internos, paneles y herramientas hechas para el proceso de tu negocio.</p>
+        <p class="service__meta">Para automatizar tareas. Tiempo según alcance.</p>
+      </article>
+      <article class="service service--purple">
+        <h3>Mantenimiento y soporte</h3>
+        <p>Actualizaciones, corrección de errores y pequeños cambios después de la entrega.</p>
+        <p class="service__meta">Plan mensual con soporte por WhatsApp y correo.</p>
+      </article>
+    </div>
+
+    <h3 class="process__title">Cómo trabajamos</h3>
+    <ol class="process" data-flash>
+      <li><strong>Descubrimiento</strong> Entendemos tu negocio y el objetivo de la web.</li>
+      <li><strong>Propuesta</strong> Alcance, tiempos y cotización por escrito.</li>
+      <li><strong>Diseño</strong> Ves el boceto antes de programar.</li>
+      <li><strong>Desarrollo</strong> Construcción con avances periódicos.</li>
+      <li><strong>Entrega</strong> Pruebas, publicación y acompañamiento.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container about">
+    <div>
+      <h2 class="section__title" data-flash>Sobre mí</h2>
+      <p class="section__text">
+        Soy Reyniel Aguilar, desarrollador detrás de aguidev y estudiante de
+        Ingeniería de Sistemas (5.º semestre, IUP Santiago Mariño). Me gusta
+        convertir ideas en sitios que se ven bien y funcionan mejor. Antes
+        trabajé como diseñador gráfico y asistente virtual freelance, así que
+        cuido tanto el código como la imagen de tu marca.
+      </p>
+    </div>
+    <div class="skills" data-flash>
+      <div class="skill-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+      <div class="skill-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+      <div class="skill-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+      <div class="skill-item"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+      <div class="skill-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+      <div class="skill-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+      <div class="skill-item"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+      <div class="skill-item"><i class="devicon-photoshop-plain colored"></i><span>Photoshop</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title" data-flash>Contacto</h2>
+    <p class="section__text">
+      ¿Tienes un proyecto en mente o una idea que quieras convertir en
+      software? Escríbeme y lo conversamos sin compromiso.
+    </p>
+
+    <div class="contact-grid">
+
+      <div class="contact-card" data-flash>
+
+        <div class="contact-card__primary">
+          <a href="mailto:reyaguilarwanh@gmail.com" class="contact-btn contact-btn--mail">
+            <span class="contact-btn__icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>
+              <strong>Escríbeme un correo</strong>
+              <em>reyaguilarwanh@gmail.com</em>
+            </span>
+          </a>
+
+          <a href="https://wa.me/584243241640" target="_blank" rel="noopener" class="contact-btn contact-btn--whatsapp">
+            <span class="contact-btn__icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 20l1.3-4.2A8 8 0 1 1 8.6 19L4 20Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M9 10c0 3 2.5 5.5 5.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M9 10c0-.6.9-1.8 1.3-1.8s.9 1.1 1 1.4c.1.3 0 .5-.2.7l-.5.5c-.2.2-.2.4-.1.6.3.6 1 1.3 1.6 1.6.2.1.4.1.6-.1l.5-.5c.2-.2.4-.3.7-.2.3.1 1.4.6 1.4 1s-1.2 1.3-1.8 1.3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>
+              <strong>Escríbeme por WhatsApp</strong>
+              <em>Respuesta rápida</em>
+            </span>
+          </a>
+        </div>
+
+        <div class="contact-card__secondary">
+          <a href="https://www.linkedin.com/in/reyniel-aguilar-477a622a5/" target="_blank" rel="noopener" class="contact-chip contact-chip--active">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M7.5 10.5v6M7.5 7.8v.01M11.5 16.5v-3.8c0-1.2.9-2.2 2.2-2.2 1.2 0 2 .9 2 2.1v3.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/Aguilarzrw" target="_blank" rel="noopener" class="contact-chip contact-chip--active">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 19c-4 1-4-2-5.5-2.3M16 21v-2.7c0-.7.2-1.3.6-1.7-2 0-4.3-.8-4.3-4.4 0-1 .3-1.8.9-2.5-.1-.3-.4-1.3.1-2.6 0 0 .8-.3 2.6.9a9 9 0 0 1 4.7 0c1.8-1.2 2.6-.9 2.6-.9.5 1.3.2 2.3.1 2.6.6.7.9 1.5.9 2.5 0 3.6-2.3 4.3-4.4 4.5.3.3.6.9.6 1.8V21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+
+      </div>
+
+      <form class="contact-form" data-flash id="contactForm">
+        <div class="contact-form__field">
+          <label for="cf-name">Nombre</label>
+          <input type="text" id="cf-name" name="name" placeholder="¿Cómo te llamas?" required>
+        </div>
+        <div class="contact-form__field">
+          <label for="cf-email">Tu correo</label>
+          <input type="email" id="cf-email" name="email" placeholder="para poder responderte" required>
+        </div>
+        <div class="contact-form__field">
+          <label for="cf-message">Mensaje</label>
+          <textarea id="cf-message" name="message" rows="4" placeholder="Cuéntame sobre tu proyecto o idea" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary contact-form__submit">Enviar mensaje</button>
+        <p class="contact-form__note">Se abrirá tu app de correo con el mensaje listo para enviar a reyaguilarwanh@gmail.com.</p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> aguidev — Reyniel Aguilar. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<div class="shock" aria-hidden="true"></div>
+<script src="https://cdn.jsdelivr.net/npm/motion@11.18.2/dist/motion.js" integrity="sha384-lFfU+kVPBF9H3h8c1O+KQNuTRX7dilL8RZiy/kxQiYulHvYCHv4z+eba37GD2qTC" crossorigin="anonymous"></script>
+<script src="js/main.js?v=2"></script>
+</body>
+</html>
