@@ -56,7 +56,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="css/styles.css?v=4">
+<link rel="stylesheet" href="css/styles.css?v=5">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -296,7 +296,11 @@
 
       </div>
 
-      <form class="contact-form" data-flash id="contactForm">
+      <form class="contact-form" data-flash id="contactForm" action="https://formsubmit.co/reyaguilarwanh@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portafolio">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="contact-form__honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="contact-form__field">
           <label for="cf-name">Nombre</label>
           <input type="text" id="cf-name" name="name" placeholder="¿Cómo te llamas?" required>
@@ -310,7 +314,7 @@
           <textarea id="cf-message" name="message" rows="4" placeholder="Cuéntame sobre tu proyecto o idea" required></textarea>
         </div>
         <button type="submit" class="btn btn--primary contact-form__submit">Enviar mensaje</button>
-        <p class="contact-form__note">Se abrirá tu app de correo con el mensaje listo para enviar a reyaguilarwanh@gmail.com.</p>
+        <p class="contact-form__note" id="formStatus" role="status" aria-live="polite">Tu mensaje me llega directo al correo y te respondo a la dirección que dejes.</p>
       </form>
 
     </div>
@@ -330,6 +334,6 @@
 
 <div class="shock" aria-hidden="true"></div>
 <script src="https://cdn.jsdelivr.net/npm/motion@11.18.2/dist/motion.js" integrity="sha384-lFfU+kVPBF9H3h8c1O+KQNuTRX7dilL8RZiy/kxQiYulHvYCHv4z+eba37GD2qTC" crossorigin="anonymous"></script>
-<script src="js/main.js?v=4"></script>
+<script src="js/main.js?v=5"></script>
 </body>
 </html>

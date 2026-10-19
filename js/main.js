@@ -63,28 +63,39 @@ if (window.Motion && !reduceMotion) {
   }, { amount: 0.25 });
 }
 
-// ===== Formulario de contacto (sin backend: abre el correo con todo listo) =====
+// ===== Formulario de contacto: envía al correo vía FormSubmit (sin backend propio) =====
 const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
+  contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
+    const button = contactForm.querySelector("button[type=submit]");
+    const data = Object.fromEntries(new FormData(contactForm));
 
-    const name = contactForm.name.value.trim();
-    const email = contactForm.email.value.trim();
-    const message = contactForm.message.value.trim();
+    button.disabled = true;
+    button.textContent = "Enviando...";
+    formStatus.classList.remove("is-error", "is-ok");
 
-    const subject = `Contacto desde el portafolio — ${name}`;
-    const body =
-      `Nombre: ${name}\n` +
-      `Correo: ${email}\n\n` +
-      `Mensaje:\n${message}`;
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/reyaguilarwanh@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ ...data, _replyto: data.email }),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || String(json.success) !== "true") throw new Error(json.message || res.status);
 
-    const mailto =
-      `mailto:reyaguilarwanh@gmail.com` +
-      `?subject=${encodeURIComponent(subject)}` +
-      `&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailto;
+      contactForm.reset();
+      formStatus.textContent = "¡Mensaje enviado! Te respondo pronto a tu correo.";
+      formStatus.classList.add("is-ok");
+      button.textContent = "Mensaje enviado";
+    } catch {
+      formStatus.innerHTML = 'No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme por <a href="https://wa.me/584243241640" target="_blank" rel="noopener">WhatsApp</a>.';
+      formStatus.classList.add("is-error");
+      button.textContent = "Enviar mensaje";
+    } finally {
+      button.disabled = false;
+    }
   });
 }
