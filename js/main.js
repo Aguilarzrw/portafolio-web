@@ -78,7 +78,7 @@ if (contactForm) {
     formStatus.classList.remove("is-error", "is-ok");
 
     try {
-      const res = await fetch("https://formsubmit.co/ajax/reyaguilarwanh@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/3eb5b9ff1cca92f752b38a937093abe0", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ ...data, _replyto: data.email }),
