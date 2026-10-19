@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Nube sonriente con ojos en X -->
+  <g stroke="#ff3d9a" stroke-opacity=".16" stroke-width="5">
+    <path d="M40 120c-18-2-26-28-6-38 0-26 30-34 44-18 10-22 46-20 52 4 24-4 34 26 16 40 6 20-18 34-34 22-12 14-40 12-48-4-12 8-30 4-24-6z"/>
+    <path d="M68 92l10 10M78 92l-10 10M108 90l10 10M118 90l-10 10M70 118c12 14 36 14 48 0"/>
+  </g>
+
+  <!-- Cohete-tiburón con dientes -->
+  <g stroke="#4fd8ff" stroke-opacity=".15" stroke-width="5" transform="rotate(-18 470 110)">
+    <path d="M380 110c30-34 120-40 170 0-50 40-140 34-170 0z"/>
+    <path d="M380 110l-30-26v52zM460 84l18-30 10 32M520 104l-10 8-10-8-10 8-10-8-10 8"/>
+    <circle cx="530" cy="98" r="4"/>
+  </g>
+
+  <!-- Rayo -->
+  <path d="M300 220l-34 60h32l-26 58 64-76h-34l28-42z" stroke="#a855ff" stroke-opacity=".18" stroke-width="5"/>
+
+  <!-- Corazón con ojos en X -->
+  <g stroke="#ff3d9a" stroke-opacity=".15" stroke-width="5">
+    <path d="M520 300c-30-34-80-4-56 38l56 52 56-52c24-42-26-72-56-38z"/>
+    <path d="M498 320l10 10M508 320l-10 10M532 320l10 10M542 320l-10 10"/>
+  </g>
+
+  <!-- Flechas garabateadas -->
+  <path d="M60 300c40-30 90-20 120 20M168 294l14 28-30 4" stroke="#4fd8ff" stroke-opacity=".14" stroke-width="5"/>
+  <path d="M400 520c-30 20-80 18-110-10M300 494l-12 18 22 6" stroke="#ff3d9a" stroke-opacity=".14" stroke-width="5"/>
+
+  <!-- X sueltas -->
+  <path d="M220 60l26 26M246 60l-26 26" stroke="#ff3d9a" stroke-opacity=".18" stroke-width="6"/>
+  <path d="M590 470l22 22M612 470l-22 22" stroke="#4fd8ff" stroke-opacity=".18" stroke-width="6"/>
+  <path d="M120 560l20 20M140 560l-20 20" stroke="#a855ff" stroke-opacity=".2" stroke-width="6"/>
+
+  <!-- Carita sonriente pequeña -->
+  <g stroke="#4fd8ff" stroke-opacity=".15" stroke-width="4">
+    <circle cx="160" cy="440" r="34"/>
+    <path d="M146 428v6M174 428v6M140 450c10 14 30 14 40 0"/>
+  </g>
+
+  <!-- Marcas de conteo -->
+  <path d="M420 400v40M434 400v40M448 400v40M462 400v40M412 436l60-32" stroke="#a855ff" stroke-opacity=".16" stroke-width="4"/>
+
+  <!-- Salpicaduras de spray -->
+  <g fill="#ff3d9a" fill-opacity=".14">
+    <circle cx="340" cy="140" r="9"/><circle cx="356" cy="128" r="4"/><circle cx="330" cy="160" r="3"/><circle cx="352" cy="154" r="2.5"/>
+    <circle cx="250" cy="600" r="7"/><circle cx="268" cy="590" r="3"/><circle cx="238" cy="616" r="2.5"/>
+  </g>
+  <g fill="#4fd8ff" fill-opacity=".14">
+    <circle cx="600" cy="200" r="8"/><circle cx="584" cy="212" r="3"/><circle cx="614" cy="184" r="2.5"/>
+    <circle cx="40" cy="400" r="6"/><circle cx="54" cy="414" r="2.5"/>
+  </g>
+
+  <!-- Chorreo de pintura -->
+  <path d="M520 560h70M532 560v26M556 560v40M578 560v18" stroke="#ff3d9a" stroke-opacity=".14" stroke-width="5"/>
+</svg>

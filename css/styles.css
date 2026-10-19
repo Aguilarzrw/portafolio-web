@@ -21,7 +21,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: var(--bg);
+  background: url("../assets/img/graffiti.svg") 0 0 / 640px, var(--bg);
   color: var(--text);
   line-height: 1.65;
 }
@@ -124,6 +124,7 @@ a { color: inherit; text-decoration: none; }
   background:
     radial-gradient(circle at 85% 15%, rgba(168, 85, 255, 0.28), transparent 45%),
     radial-gradient(circle at 10% 90%, rgba(255, 61, 154, 0.18), transparent 40%),
+    url("../assets/img/graffiti.svg") 120px 80px / 640px,
     var(--bg);
 }
 
@@ -420,11 +421,13 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== Sections ===== */
 .section {
+  position: relative;
+  overflow: hidden;
   padding: 100px 0;
 }
 
 .section--alt {
-  background: var(--bg-alt);
+  background: url("../assets/img/graffiti.svg") 320px 200px / 640px, var(--bg-alt);
   border-top: 2px dashed var(--border);
   border-bottom: 2px dashed var(--border);
 }
@@ -461,6 +464,27 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 28px;
   line-height: 1.75;
 }
+
+/* Tags de grafiti pintados en la pared */
+.tag {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  line-height: 1;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--c, var(--accent));
+  opacity: 0.35;
+  rotate: -10deg;
+}
+
+.tag--boom   { --c: var(--accent);   top: 40px;  right: 4%; }
+.tag--bang   { --c: var(--accent-2); top: 60px;  right: 6%; rotate: 8deg; }
+.tag--was    { --c: var(--shimmer);  bottom: 30px; right: 3%; font-size: clamp(1.8rem, 4vw, 3rem); }
+
+.section > .container { position: relative; z-index: 1; }
 
 /* ===== Skills con iconos ===== */
 .skills {
@@ -753,6 +777,56 @@ a { color: inherit; text-decoration: none; }
   border-top: 2px solid var(--accent);
   background: var(--bg);
 }
+
+.footer__legal {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 10px;
+}
+
+.footer__legal a:hover { color: var(--accent-2); text-decoration: underline; }
+
+/* ===== Página legal ===== */
+.legal .container { max-width: 760px; }
+
+.legal__updated { color: var(--text-muted); font-size: 0.9rem; }
+
+.legal__toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 48px;
+}
+
+.legal__toc a {
+  padding: 6px 14px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+.legal__toc a:hover { border-color: var(--accent); color: var(--accent); }
+
+.legal section { margin-bottom: 56px; scroll-margin-top: 90px; }
+
+.legal h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.legal h3 { font-size: 1.1rem; margin: 24px 0 6px; }
+
+.legal p,
+.legal li { color: var(--text-muted); }
+
+.legal ul { padding-left: 20px; margin: 8px 0; }
+
+.legal a { color: var(--accent-2); }
 
 /* ===== Responsive ===== */
 @media (max-width: 960px) {
