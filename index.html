@@ -56,11 +56,11 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="css/styles.css?v=5">
+<link rel="stylesheet" href="css/styles.css?v=7">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Manrope:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css">
 </head>
 <body>
@@ -81,21 +81,18 @@
 </header>
 
 <section id="inicio" class="hero">
-  <!-- Garabatos estilo Jinx: carita con ojos en X y una X -->
+  <!-- Garabato estilo Jinx: carita con ojos en X -->
   <svg class="hero-doodle" viewBox="0 0 200 200" aria-hidden="true">
     <path d="M100 18c45 2 80 36 80 82s-36 82-82 80S18 144 20 98 56 16 104 20" />
     <path d="M58 70l22 22M80 70L58 92M122 68l22 22M144 68l-22 22" />
     <path d="M52 124c20 30 76 34 98 0M66 134l-4 14M86 140l-2 16M108 141l2 15M128 136l5 14" />
-  </svg>
-  <svg class="hero-doodle hero-doodle--x" viewBox="0 0 100 100" aria-hidden="true">
-    <path d="M14 18l72 66M84 14L18 86" />
   </svg>
 
   <div class="container hero__inner">
     <div class="hero__intro">
       <h1 class="hero__title" data-glitch>
         <span class="hero__hi">Hola, soy Reyniel.</span>
-        Tu negocio merece una web que haga ¡boom!
+        Tu negocio merece una web que haga <span class="hero__boom">¡boom!</span>
       </h1>
       <p class="hero__text">
         Diseño y desarrollo webs a medida para marcas, artistas y negocios:
@@ -105,6 +102,7 @@
         <a href="#projects" class="btn btn--primary">Ver proyectos</a>
         <a href="#contact" class="btn btn--ghost">Cotizar mi web</a>
       </div>
+      <p class="status"><span class="status__dot" aria-hidden="true"></span>Disponible para nuevos proyectos</p>
     </div>
 
     <a href="#projects" class="hero__stack" aria-label="Ver proyectos">
@@ -116,11 +114,10 @@
 </section>
 
 <section id="projects" class="section">
-  <span class="tag tag--bang" aria-hidden="true">¡BANG!</span>
   <div class="container">
-    <h2 class="section__title" data-flash>Proyectos</h2>
+    <h2 class="section__title" data-reveal>Proyectos</h2>
 
-    <article class="case" data-flash>
+    <article class="case" data-reveal>
       <a class="case__media" href="https://aguilarzrw.github.io/bramdon-portafolio/" target="_blank" rel="noopener">
         <span class="case__bar"><i></i><i></i><i></i>aguilarzrw.github.io/bramdon-portafolio</span>
         <img src="assets/img/proyecto-bramdon.jpg" alt="Portada del portafolio de Bramdon Aguilar, Creative Producer" width="1200" height="630" loading="lazy">
@@ -138,7 +135,7 @@
       </div>
     </article>
 
-    <article class="case case--flip" data-flash>
+    <article class="case case--flip" data-reveal>
       <a class="case__media" href="https://elprincipedelaranchera.com/" target="_blank" rel="noopener">
         <span class="case__bar"><i></i><i></i><i></i>elprincipedelaranchera.com</span>
         <img src="assets/img/proyecto-ranchera.jpg" alt="Portada del sitio de Ricardo Velasco, El Príncipe De La Ranchera" width="1200" height="630" loading="lazy">
@@ -159,41 +156,40 @@
 </section>
 
 <section id="services" class="section section--alt">
-  <span class="tag tag--boom" aria-hidden="true">¡KABOOM!</span>
   <div class="container">
-    <h2 class="section__title" data-flash>Servicios</h2>
+    <h2 class="section__title" data-reveal>Servicios</h2>
     <p class="section__text">
       Cada proyecto se cotiza a medida según lo que necesites. Estos son los
       formatos más comunes:
     </p>
 
-    <div class="services" data-flash>
-      <article class="service service--pink">
+    <div class="services" data-reveal>
+      <article class="service">
         <h3>Landing page</h3>
         <p>Una sola página enfocada en que el visitante te escriba, compre o reserve.</p>
         <p class="service__meta">Para lanzar un negocio, servicio o evento. Entrega en 1 a 2 semanas.</p>
       </article>
-      <article class="service service--blue">
+      <article class="service">
         <h3>Sitio web multipágina</h3>
         <p>Web corporativa con varias secciones: nosotros, servicios, portafolio, blog y contacto.</p>
         <p class="service__meta">Para empresas, marcas y profesionales. Entrega en 3 a 5 semanas.</p>
       </article>
-      <article class="service service--purple">
+      <article class="service">
         <h3>Portafolio web</h3>
         <p>Tu trabajo en primer plano: galerías, videos y una forma clara de contratarte.</p>
         <p class="service__meta">Para creativos, artistas y freelancers. Entrega en 1 a 3 semanas.</p>
       </article>
-      <article class="service service--pink">
+      <article class="service">
         <h3>Catálogo web con pedidos por WhatsApp</h3>
         <p>Tus productos con fotos, precios y detalles. Tu cliente elige y te escribe por WhatsApp con el pedido listo para cerrar la venta.</p>
         <p class="service__meta">Para negocios que venden por redes y WhatsApp. Entrega en 1 a 3 semanas.</p>
       </article>
-      <article class="service service--blue">
+      <article class="service">
         <h3>Aplicación web a medida</h3>
         <p>Sistemas internos, paneles y herramientas hechas para el proceso de tu negocio.</p>
         <p class="service__meta">Para automatizar tareas. Tiempo según alcance.</p>
       </article>
-      <article class="service service--purple">
+      <article class="service">
         <h3>Mantenimiento y soporte</h3>
         <p>Actualizaciones, corrección de errores y pequeños cambios después de la entrega.</p>
         <p class="service__meta">Plan mensual con soporte por WhatsApp y correo.</p>
@@ -201,7 +197,7 @@
     </div>
 
     <h3 class="process__title">Cómo trabajamos</h3>
-    <ol class="process" data-flash>
+    <ol class="process" data-reveal>
       <li><strong>Descubrimiento</strong> Entendemos tu negocio y el objetivo de la web.</li>
       <li><strong>Propuesta</strong> Alcance, tiempos y cotización por escrito.</li>
       <li><strong>Diseño</strong> Ves el boceto antes de programar.</li>
@@ -214,7 +210,7 @@
 <section id="about" class="section">
   <div class="container about">
     <div>
-      <h2 class="section__title" data-flash>Sobre mí</h2>
+      <h2 class="section__title" data-reveal>Sobre mí</h2>
       <p class="section__text">
         Soy Reyniel Aguilar, desarrollador detrás de aguidev y estudiante de
         Ingeniería de Sistemas (5.º semestre, IUP Santiago Mariño). Me gusta
@@ -223,7 +219,7 @@
         cuido tanto el código como la imagen de tu marca.
       </p>
     </div>
-    <div class="skills" data-flash>
+    <div class="skills" data-reveal>
       <div class="skill-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
       <div class="skill-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
       <div class="skill-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
@@ -237,9 +233,8 @@
 </section>
 
 <section id="contact" class="section section--alt">
-  <span class="tag tag--was" aria-hidden="true">aguidev estuvo aquí</span>
   <div class="container">
-    <h2 class="section__title" data-flash>Contacto</h2>
+    <h2 class="section__title" data-reveal>Contacto</h2>
     <p class="section__text">
       ¿Tienes un proyecto en mente o una idea que quieras convertir en
       software? Escríbeme y lo conversamos sin compromiso.
@@ -247,7 +242,7 @@
 
     <div class="contact-grid">
 
-      <div class="contact-card" data-flash>
+      <div class="contact-card" data-reveal>
 
         <div class="contact-card__primary">
           <a href="mailto:reyaguilarwanh@gmail.com" class="contact-btn contact-btn--mail">
@@ -296,7 +291,7 @@
 
       </div>
 
-      <form class="contact-form" data-flash id="contactForm" action="https://formsubmit.co/3eb5b9ff1cca92f752b38a937093abe0" method="POST">
+      <form class="contact-form" data-reveal id="contactForm" action="https://formsubmit.co/3eb5b9ff1cca92f752b38a937093abe0" method="POST">
         <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portafolio">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
@@ -332,8 +327,7 @@
   </div>
 </footer>
 
-<div class="shock" aria-hidden="true"></div>
 <script src="https://cdn.jsdelivr.net/npm/motion@11.18.2/dist/motion.js" integrity="sha384-lFfU+kVPBF9H3h8c1O+KQNuTRX7dilL8RZiy/kxQiYulHvYCHv4z+eba37GD2qTC" crossorigin="anonymous"></script>
-<script src="js/main.js?v=6"></script>
+<script src="js/main.js?v=7"></script>
 </body>
 </html>

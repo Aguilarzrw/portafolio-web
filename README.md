@@ -29,13 +29,15 @@ y pon su captura (1200×630) en `assets/img/`.
 
 ## Estilo visual
 
-Estilo Jinx (Arcane): fondo tinta violeta de Zaun, rosa grafiti (`--accent`),
-azul de su pelo (`--accent-2`) y morado shimmer (`--shimmer`). Tipografía
-Permanent Marker (títulos tipo grafiti) + Chakra Petch (texto). Garabato SVG
-de Jinx en el hero que se "pinta" al cargar, sombras duras desplazadas y
-elementos ligeramente inclinados. Animaciones con Motion (CDN): "shock" al
-cargar (destello, sacudida y RGB partido) y "flashbacks" al hacer scroll. Respeta `prefers-reduced-motion`. La paleta
-se ajusta en las variables de `css/styles.css` (`:root`).
+"Jinx con traje": fondo tinta violeta de Zaun, rosa solo para botones y
+llamadas a la acción (`--accent`), azul para detalles y enlaces (`--accent-2`),
+morado casi solo en la barra de scroll (`--shimmer`). Tipografía Chakra Petch
+(títulos) + Manrope (texto); Permanent Marker queda como firma (logo y
+"¡boom!"). Garabato SVG de Jinx en el hero que se "pinta" al cargar, y fondo de
+grafiti a media opacidad solo en el hero y en contacto. Movimiento sutil con
+Motion (CDN): un glitch RGB suave al cargar y entrada simple al hacer scroll.
+Respeta `prefers-reduced-motion`. La paleta se ajusta en `:root` de
+`css/styles.css`. La versión anterior, más grafiti, está en la rama `jinx-v1`.
 
 ## Cómo verlo localmente
 
