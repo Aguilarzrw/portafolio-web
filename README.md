@@ -63,6 +63,6 @@ el detalle del logo, paleta y archivos. Favicon ya aplicado en
 - [x] Definir diseño y estética final (colores, tipografía, estilo visual) — **estilo Jinx**
 - [x] Definir contenido definitivo de cada sección (Sobre mí, Experiencia, Contacto — con datos reales del CV)
 - [x] Foto de perfil real (`assets/img/reyniel.webp`)
-- [ ] Actualizar enlaces de LinkedIn/GitHub en la sección de contacto (aún sin URL)
+- [x] Enlaces de LinkedIn y GitHub en contacto y footer
 - [x] CV en PDF (`assets/cv/cv-reyniel-aguilar.pdf`)
 - [x] Publicar en GitHub Pages
