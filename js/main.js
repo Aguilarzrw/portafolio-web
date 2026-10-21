@@ -22,10 +22,6 @@ const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 // Sin Motion (CDN caído) o con movimiento reducido, todo queda visible y estático
 if (window.Motion && !reduceMotion) {
   const { animate, inView } = Motion;
-  const heroTitle = document.querySelector("[data-glitch]");
-
-  heroTitle.classList.add("is-glitching");
-  heroTitle.addEventListener("animationend", () => heroTitle.classList.remove("is-glitching"), { once: true });
 
   document.querySelectorAll("[data-reveal]").forEach((el) => { el.style.opacity = 0; });
 
