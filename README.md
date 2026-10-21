@@ -10,7 +10,7 @@ portafolio-web/
 ├── css/
 │   └── styles.css    # Estilos
 ├── js/
-│   └── main.js        # Menú móvil, animaciones Motion, formulario
+│   └── main.js        # Menú, animaciones Motion, formulario
 └── assets/
     ├── img/           # Imágenes de proyectos, foto de perfil, etc.
     └── cv/            # PDF del currículum
@@ -29,15 +29,17 @@ y pon su captura (1200×630) en `assets/img/`.
 
 ## Estilo visual
 
-"Jinx con traje": fondo tinta violeta de Zaun, rosa solo para botones y
-llamadas a la acción (`--accent`), azul para detalles y enlaces (`--accent-2`),
-morado casi solo en la barra de scroll (`--shimmer`). Tipografía Chakra Petch
-(títulos) + Manrope (texto); Permanent Marker queda como firma (logo y
-"¡boom!"). Garabato SVG de Jinx en el hero que se "pinta" al cargar, y fondo de
-grafiti a media opacidad solo en el hero y en contacto. Movimiento sutil con
-Motion (CDN): un glitch RGB suave al cargar y entrada simple al hacer scroll.
-Respeta `prefers-reduced-motion`. La paleta se ajusta en `:root` de
-`css/styles.css`. La versión anterior, más grafiti, está en la rama `jinx-v1`.
+Estilo sobrio y editorial: fondo grafito (`--color-bg`), un único acento azul
+(`--color-accent`) para CTAs, enlaces y detalles. Tipografía Fraunces (títulos)
++ Manrope (texto). Todos los colores, tamaños, espaciados, radios y tiempos
+viven como variables en `:root` de `css/styles.css`.
+
+Movimiento con Motion (CDN, `js/main.js`): entrada escalonada del hero,
+parallax suave de las capturas, barra de progreso de scroll, revelado al
+entrar en pantalla, enlace activo en la navegación y hovers con resorte.
+Respeta `prefers-reduced-motion` y, si Motion no carga, el contenido queda
+visible. Las imágenes están en WebP (640 y 1200 px). La versión anterior
+(estilo grafiti Jinx) está en la rama `jinx-v1`.
 
 ## Cómo verlo localmente
 
