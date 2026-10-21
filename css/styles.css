@@ -1,18 +1,18 @@
 /* ===== Tokens: todo valor de diseño vive aquí ===== */
 :root {
-  /* Color: base grafito + un solo acento */
-  --color-bg: #0e1116;
-  --color-surface: #151a22;
-  --color-surface-2: #1b212b;
-  --color-border: #262e3b;
-  --color-text: #e9edf3;
-  --color-muted: #9ba6b8;
-  --color-placeholder: #7a8599;
-  --color-accent: #5b9bff;
-  --color-accent-hover: #86b5ff;
-  --color-on-accent: #0a0e14;
-  --color-danger: #ff9b9b;
-  --color-overlay: rgba(14, 17, 22, 0.85);
+  /* Color: base clara + un solo acento (las secciones oscuras usan .section--dark) */
+  --color-bg: #f6f5f1;
+  --color-surface: #ffffff;
+  --color-surface-2: #fbfaf7;
+  --color-border: #dedbd2;
+  --color-text: #14171c;
+  --color-muted: #525a69;
+  --color-placeholder: #6b7383;
+  --color-accent: #1d4ed8;
+  --color-accent-hover: #1e40af;
+  --color-on-accent: #ffffff;
+  --color-danger: #b42318;
+  --color-overlay: rgba(246, 245, 241, 0.88);
 
   /* Tipografía: 2 familias */
   --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
@@ -24,7 +24,7 @@
   --text-lg: 1.125rem;
   --text-xl: 1.375rem;
   --text-2xl: clamp(1.75rem, 3vw, 2.25rem);
-  --text-3xl: clamp(2.25rem, 4.6vw, 3.5rem);
+  --text-3xl: clamp(2.5rem, 5vw, 4rem);
   --leading-tight: 1.15;
   --leading-body: 1.7;
   --measure: 68ch;
@@ -44,8 +44,8 @@
   --radius-sm: 6px;
   --radius: 10px;
   --radius-pill: 999px;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.35);
+  --shadow-sm: 0 1px 2px rgba(20, 23, 28, 0.08);
+  --shadow-md: 0 14px 34px rgba(20, 23, 28, 0.12);
   --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
   --dur-fast: 200ms;
   --dur: 300ms;
@@ -196,7 +196,7 @@ ul, ol { list-style: none; }
   display: flex;
   align-items: center;
   padding: var(--space-8) 0;
-  background: radial-gradient(circle at 85% 10%, rgba(91, 155, 255, 0.1), transparent 45%), var(--color-bg);
+  background: radial-gradient(circle at 85% 10%, rgba(29, 78, 216, 0.07), transparent 45%), var(--color-bg);
 }
 
 .hero__inner {
@@ -248,9 +248,9 @@ ul, ol { list-style: none; }
 .status__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent); animation: pulse 2.4s ease-out infinite; }
 
 @keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(91, 155, 255, 0.5); }
-  70%  { box-shadow: 0 0 0 8px rgba(91, 155, 255, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(91, 155, 255, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba(29, 78, 216, 0.45); }
+  70%  { box-shadow: 0 0 0 8px rgba(29, 78, 216, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(29, 78, 216, 0); }
 }
 
 .hero__stack { position: relative; display: block; aspect-ratio: 1200 / 760; }
@@ -657,6 +657,56 @@ ul, ol { list-style: none; }
   .contact-card, .contact-form { padding: var(--space-5); }
   .contact-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== Secciones oscuras: redefinen los tokens y todo lo de adentro se adapta ===== */
+.section--dark,
+.footer {
+  --color-bg: #0e1116;
+  --color-surface: #151a22;
+  --color-surface-2: #1b212b;
+  --color-border: #2a3342;
+  --color-text: #e9edf3;
+  --color-muted: #a3aec0;
+  --color-placeholder: #8591a6;
+  --color-accent: #7aadff;
+  --color-accent-hover: #a3c5ff;
+  --color-on-accent: #0a0e14;
+  --color-danger: #ff9b9b;
+  --shadow-md: 0 14px 34px rgba(0, 0, 0, 0.4);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.section__eyebrow {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.nav-links a.nav-cta,
+.nav-links a.nav-cta:hover { color: var(--color-on-accent); padding: var(--space-2) var(--space-4); }
+.nav-links a.nav-cta::after { display: none; }
+
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.hero__facts li { display: flex; align-items: center; gap: var(--space-2); }
+.hero__facts li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); }
+
+.service__cta { align-self: flex-start; margin-top: var(--space-4); padding: var(--space-2) var(--space-4); font-size: var(--text-sm); }
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
 /* ===== Movimiento: estados iniciales (solo si hay movimiento permitido) ===== */
 .has-motion [data-hero],
