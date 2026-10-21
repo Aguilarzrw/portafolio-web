@@ -62,7 +62,7 @@ el detalle del logo, paleta y archivos. Favicon ya aplicado en
 - [x] Definir nombre definitivo (marca personal / dominio del sitio) — **aguidev**
 - [x] Definir diseño y estética final (colores, tipografía, estilo visual) — **estilo Jinx**
 - [x] Definir contenido definitivo de cada sección (Sobre mí, Experiencia, Contacto — con datos reales del CV)
-- [ ] Agregar foto de perfil real en `assets/img/`
+- [x] Foto de perfil real (`assets/img/reyniel.webp`)
 - [ ] Actualizar enlaces de LinkedIn/GitHub en la sección de contacto (aún sin URL)
-- [ ] Subir CV en PDF a `assets/cv/`
+- [x] CV en PDF (`assets/cv/cv-reyniel-aguilar.pdf`)
 - [x] Publicar en GitHub Pages
