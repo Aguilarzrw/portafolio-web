@@ -62,7 +62,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=16">
+<link rel="stylesheet" href="css/styles.css?v=18">
 <!-- Oculta lo que se animará solo si hay movimiento permitido; main.js lo quita si Motion no carga -->
 <script>if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("has-motion");</script>
 </head>
@@ -242,6 +242,81 @@
       </article>
     </div>
 
+    <h3 class="process__title" data-reveal id="precios">Elige tu paquete</h3>
+    <p class="section__text" data-reveal>
+      Si no sabes por dónde empezar, compara los tres paquetes más pedidos.
+      Todos incluyen dominio personalizado y páginas legales.
+    </p>
+
+    <div class="pricing">
+      <article class="tier" data-stagger>
+        <p class="tier__kicker">Esencial</p>
+        <h4>Landing o Portafolio</h4>
+        <p class="tier__price">$120</p>
+        <p class="tier__time">Entrega en 1 a 2 semanas</p>
+        <ul class="tier__list">
+          <li>1 página con hasta 6 secciones</li>
+          <li>Diseño y desarrollo personalizado</li>
+          <li><strong>Dominio personalizado incluido</strong></li>
+          <li>Botón a WhatsApp y formulario de contacto</li>
+          <li>SEO básico</li>
+          <li>Páginas legales (aviso legal, privacidad y cookies)</li>
+          <li>1 ronda de ajustes</li>
+          <li class="is-off">SEO local y analítica de visitas</li>
+          <li class="is-off">Soporte después de la entrega</li>
+        </ul>
+        <a class="btn btn--ghost tier__cta" href="https://wa.me/584243241640?text=Hola%20Reyniel%2C%20quiero%20cotizar%20el%20paquete%20Esencial%20(landing%20o%20portafolio)" target="_blank" rel="noopener">Cotizar Esencial<span class="sr-only"> por WhatsApp (se abre en otra pestaña)</span></a>
+      </article>
+
+      <article class="tier tier--featured" data-stagger>
+        <p class="tier__badge">Más elegido</p>
+        <p class="tier__kicker">Profesional</p>
+        <h4>Sitio multipágina</h4>
+        <p class="tier__price">$180</p>
+        <p class="tier__time">Entrega en 3 a 5 semanas</p>
+        <ul class="tier__list">
+          <li>Hasta 5 páginas: inicio, nosotros, servicios, portafolio y contacto</li>
+          <li>Diseño y desarrollo personalizado</li>
+          <li><strong>Dominio personalizado incluido</strong></li>
+          <li><strong>SEO completo en cada página y SEO local (Google Maps)</strong></li>
+          <li><strong>Analítica de visitas</strong></li>
+          <li>Páginas legales (aviso legal, privacidad y cookies)</li>
+          <li>Botón a WhatsApp y formulario de contacto</li>
+          <li>2 rondas de ajustes</li>
+          <li><strong>1 mes de soporte gratis</strong></li>
+        </ul>
+        <a class="btn btn--primary tier__cta" href="https://wa.me/584243241640?text=Hola%20Reyniel%2C%20quiero%20cotizar%20el%20paquete%20Profesional%20(sitio%20multip%C3%A1gina)" target="_blank" rel="noopener">Cotizar Profesional<span class="sr-only"> por WhatsApp (se abre en otra pestaña)</span></a>
+      </article>
+
+      <article class="tier" data-stagger>
+        <p class="tier__kicker">Tienda</p>
+        <h4>Catálogo con pedidos por WhatsApp</h4>
+        <p class="tier__price"><small>desde</small> $220</p>
+        <p class="tier__time">Entrega en 1 a 3 semanas</p>
+        <ul class="tier__list">
+          <li>Inicio, catálogo y contacto</li>
+          <li><strong>Dominio personalizado incluido</strong></li>
+          <li>Carga de hasta 30 productos con fotos, precios y descripción</li>
+          <li>Categorías y buscador de productos</li>
+          <li>Carrito que envía el pedido a tu WhatsApp</li>
+          <li>SEO básico y páginas legales</li>
+          <li>Guía para editar tus productos tú mismo</li>
+          <li>3 rondas de ajustes</li>
+          <li>1 mes de soporte gratis</li>
+        </ul>
+        <p class="tier__note">Precio base: más productos o funciones se cotizan según tus requerimientos.</p>
+        <a class="btn btn--ghost tier__cta" href="https://wa.me/584243241640?text=Hola%20Reyniel%2C%20quiero%20cotizar%20un%20cat%C3%A1logo%20con%20pedidos%20por%20WhatsApp" target="_blank" rel="noopener">Cotizar Tienda<span class="sr-only"> por WhatsApp (se abre en otra pestaña)</span></a>
+      </article>
+    </div>
+
+    <div class="pricing-app" data-reveal>
+      <div>
+        <h4>Aplicación web a medida</h4>
+        <p>Sistemas de citas, control de pagos, paneles y herramientas para tu operación. Propuesta con alcance, tiempos y precio cerrado después de una reunión de requerimientos.</p>
+      </div>
+      <p class="pricing-app__price"><small>desde</small> $400</p>
+    </div>
+
     <ul class="pricing-notes" data-reveal>
       <li><strong>Pago en dos partes:</strong> 50% para iniciar y 50% al entregar, antes de la publicación final.</li>
       <li><strong>Dominio:</strong> el primer año va incluido y yo lo registro y configuro. Desde el segundo año, la renovación (normalmente entre $12 y $15 al año) la paga el cliente.</li>
@@ -392,6 +467,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js" integrity="sha384-L8F6MBCtza31dSRnyAsxhtWvL4lBh6NwQ27N+T2yd16CGe7UKTa7EVaTDmAP5Wv/" crossorigin="anonymous"></script>
-<script src="js/main.js?v=9"></script>
+<script src="js/main.js?v=10"></script>
 </body>
 </html>
