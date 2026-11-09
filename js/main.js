@@ -66,7 +66,7 @@ function initMotion() {
   }, { amount: 0.2 });
 
   // Grupos escalonados: servicios, pasos del proceso y tecnologías
-  document.querySelectorAll(".services, .process, .skills").forEach((group) => {
+  document.querySelectorAll(".services, .process, .skills, .pricing").forEach((group) => {
     inView(group, () => {
       animate(group.querySelectorAll("[data-stagger]"), { opacity: [0, 1], y: [20, 0] }, { ...enter, delay: stagger(0.08) });
     }, { amount: 0.2 });
