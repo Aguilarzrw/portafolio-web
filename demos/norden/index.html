@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#09111f">
+  <meta name="description" content="Demo interactivo de catálogo digital creado por aguidev.">
+  <title>NÓRDEN | Catálogo digital — Demo aguidev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="demo-strip"><span>AGUIDEV · EXPERIENCIA INTERACTIVA</span><span>CATÁLOGO DIGITAL / DEMO INTEGRADA</span></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Nórden inicio"><span class="brand-mark">N</span><span>NÓRDEN<small>OBJETOS PARA TU DÍA</small></span></a>
+    <nav class="desktop-nav" id="mainNav"><a href="#catalogo">Catálogo</a><a href="#nosotros">La tienda</a><a href="#ayuda">Ayuda</a><a class="nav-contact" href="https://wa.me/584243241640?text=Hola%20Reyniel%2C%20vi%20la%20demo%20N%C3%93RDEN%20y%20quiero%20informaci%C3%B3n%20sobre%20un%20cat%C3%A1logo%20para%20mi%20negocio." target="_blank" rel="noopener">Contactar por WhatsApp ↗</a></nav>
+    <div class="top-actions"><button class="icon-btn" id="adminOpen" aria-label="Abrir panel de demostración">⌘</button><button class="cart-btn" id="cartOpen">Bolsa <span id="cartCount">0</span></button><button class="menu-btn" id="menuOpen" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">☰</button></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow"><span></span> TECNOLOGÍA · HOGAR · ACCESORIOS</p><h1>Pequeños detalles.<br><em>Grandes cambios.</em></h1><p class="hero-text">Una selección de objetos útiles, diseño cuidado y tecnología para acompañar tu día.</p><a class="button button-light" href="#catalogo">Explorar colección <span>↘</span></a><div class="hero-foot"><span>01 — 03</span><span>DESCUBRE ALGO NUEVO</span></div></div>
+      <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-glow"></div><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30b?auto=format&fit=crop&w=760&q=70" alt="Auriculares inalámbricos de diseño" fetchpriority="high" onerror="this.hidden=true;this.parentElement.classList.add(\'image-fallback\')"><div class="hero-note"><b>DISEÑO QUE SE SIENTE</b><span>Selección Nórden / 2026</span></div><span class="hero-index">Nº 001</span></div>
+    </section>
+    <section class="trust-row"><div><b>01</b><span>Selección curada</span></div><div><b>02</b><span>Detalles útiles</span></div><div><b>03</b><span>Compra sencilla</span></div><div><b>04</b><span>Atención cercana</span></div></section>
+    <section class="catalog section" id="catalogo">
+      <div class="section-head"><div><p class="eyebrow">LA COLECCIÓN / 2026</p><h2>Encuentra tu próximo <em>favorito.</em></h2></div><p>Productos de muestra para explorar cómo funciona un catálogo digital hecho a la medida de tu negocio.</p></div>
+      <div class="tools"><label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar un producto..." aria-label="Buscar productos"></label><div class="filters" id="filters"><button class="filter active" data-category="Todos">Todos</button><button class="filter" data-category="Tecnología">Tecnología</button><button class="filter" data-category="Hogar">Hogar</button><button class="filter" data-category="Accesorios">Accesorios</button></div><select id="sortSelect" aria-label="Ordenar productos"><option value="featured">Destacados</option><option value="low">Precio: menor a mayor</option><option value="high">Precio: mayor a menor</option><option value="name">Nombre A–Z</option></select></div>
+      <div class="result-line"><span id="resultCount">8 productos</span><span>PRECIOS Y EXISTENCIAS FICTICIOS</span></div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+    </section>
+    <section class="feature-band" id="nosotros"><div class="feature-image"><img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=900&q=70" alt="Interior de hogar con objetos de diseño" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add(\'image-fallback\')"></div><div class="feature-copy"><p class="eyebrow">MENOS RUIDO. MÁS INTENCIÓN.</p><h2>Elegir bien también es una forma de <em>vivir mejor.</em></h2><p>Nórden es una tienda ficticia creada para mostrar cómo una marca puede presentar sus productos, organizar su catálogo y recibir solicitudes desde una experiencia digital clara.</p><a href="#catalogo" class="text-link">Volver al catálogo ↗</a></div></section>
+    <section class="bottom-cta" id="ayuda"><p class="eyebrow">¿TE GUSTA LO QUE VES?</p><h2>Tu negocio también puede<br>tener una experiencia así.</h2><p>Este es un piloto interactivo de aguidev. Imagina tu marca, tus productos y tus propias funciones aquí.</p><a class="button button-light" href="https://wa.me/584243241640?text=Hola%20Reyniel%2C%20vi%20la%20demo%20N%C3%93RDEN%20y%20quiero%20cotizar%20un%20cat%C3%A1logo%20digital%20para%20mi%20negocio." target="_blank" rel="noopener">Quiero un catálogo para mi negocio ↗</a></section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-mark">N</span><span>NÓRDEN<small>TIENDA DE DEMOSTRACIÓN</small></span></a><span>Proyecto ficticio · Experiencia interactiva de aguidev</span></footer>
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cartDrawer" aria-label="Tu bolsa"><div class="drawer-head"><div><p class="eyebrow">TU SELECCIÓN</p><h3>Tu bolsa <span id="drawerCount">(0)</span></h3></div><button class="close-btn" data-close aria-label="Cerrar">×</button></div><div id="cartItems" class="cart-items"></div><div class="drawer-bottom"><div class="total-line"><span>Total de muestra</span><b id="cartTotal">$0.00</b></div><button class="button button-light full" id="checkoutBtn">Enviar pedido por WhatsApp</button><p class="micro">WhatsApp abrirá un mensaje preparado. Los precios y existencias son ficticios; no se procesa ningún pago.</p></div></aside>
+  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close-btn modal-close" data-close aria-label="Cerrar">×</button><div id="productDetail"></div></div>
+  <div class="modal admin-modal" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle"><button class="close-btn modal-close" data-close aria-label="Cerrar">×</button><div class="admin-head"><p class="eyebrow">MODO DE PRUEBA</p><h2 id="adminTitle">Panel de gestión</h2><p>Administra productos de muestra. Los cambios se guardan únicamente en este navegador.</p></div><div class="admin-stats" id="adminStats"></div><div class="admin-controls"><h3>Productos del catálogo</h3><button class="button button-light" id="addProduct">+ Añadir producto</button></div><div class="admin-list" id="adminList"></div><p class="micro">Los datos son ficticios y se almacenan localmente. Recarga la página para conservar tus cambios en este dispositivo.</p></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    (() => {
+      const sendHeight = () => parent.postMessage({ type: "aguidev-demo-height", height: Math.ceil(document.documentElement.scrollHeight) }, location.origin);
+      new ResizeObserver(sendHeight).observe(document.documentElement);
+      window.addEventListener("load", sendHeight);
+      window.addEventListener("resize", sendHeight);
+      sendHeight();
+    })();
+  </script>
+</body>
+</html>
