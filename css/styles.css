@@ -867,7 +867,7 @@ ul, ol { list-style: none; }
 .has-motion [data-stagger],
 .has-motion .hero__shot { opacity: 0; }
 
-.btn { will-change: transform; }
+
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -1048,4 +1048,11 @@ body {
   .demo-card__visual { min-height:280px;padding:2.5rem 1.5rem; }
   .demo-card__body { padding:1.5rem; }
   .demo-card__body .btn { width:100%;text-align:center; }
+}
+
+/* Rendimiento: evitar desenfoques costosos en pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(8,13,24,.98); }
+  .hero__stack { filter: none; }
+  .status__dot { animation: none; }
 }
