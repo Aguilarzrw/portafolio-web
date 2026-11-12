@@ -24,7 +24,14 @@ document.addEventListener("keydown", (e) => {
 // Sombra en la barra al hacer scroll
 const onScroll = () => navbar.classList.toggle("is-scrolled", window.scrollY > 8);
 onScroll();
-addEventListener("scroll", onScroll, { passive: true });
+let scrollFrame = 0;
+addEventListener("scroll", () => {
+  if (scrollFrame) return;
+  scrollFrame = requestAnimationFrame(() => {
+    onScroll();
+    scrollFrame = 0;
+  });
+}, { passive: true });
 
 // Enlace activo según la sección visible
 const links = [...navLinks.querySelectorAll("a")];
