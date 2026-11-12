@@ -65,11 +65,11 @@ function initMotion() {
     animate(el, { opacity: [0, 1], y: [24, 0] }, enter);
   }, { amount: 0.2 });
 
-  // Grupos escalonados: servicios, pasos del proceso y tecnologías
-  document.querySelectorAll(".services, .process, .skills, .pricing").forEach((group) => {
-    inView(group, () => {
-      animate(group.querySelectorAll("[data-stagger]"), { opacity: [0, 1], y: [20, 0] }, { ...enter, delay: stagger(0.08) });
-    }, { amount: 0.2 });
+  // Cada tarjeta se observa individualmente: evita que una cuadrícula alta quede invisible en móviles.
+  document.querySelectorAll(".services [data-stagger], .process [data-stagger], .skills [data-stagger]").forEach((item, index) => {
+    inView(item, () => {
+      animate(item, { opacity: [0, 1], y: [20, 0] }, { ...enter, delay: Math.min(index * 0.06, 0.24) });
+    }, { amount: 0.12 });
   });
 
   // Hover con resorte: interrumpible, conserva la velocidad
