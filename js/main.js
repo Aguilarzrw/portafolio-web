@@ -187,3 +187,33 @@ if (contactForm) {
     }
   });
 }
+
+
+// ===== Demo NÓRDEN integrada: el catálogo solo se descarga al abrirlo =====
+(() => {
+  const openButton = document.querySelector("[data-demo-open]");
+  const demoPanel = document.getElementById("demo-live");
+  const frame = document.getElementById("nordenFrame");
+  const closeButton = document.querySelector("[data-demo-close]");
+  if (!openButton || !demoPanel || !frame || !closeButton) return;
+  let loaded = false;
+  openButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    demoPanel.hidden = false;
+    if (!loaded) {
+      frame.src = "demos/norden/index.html";
+      loaded = true;
+    }
+    demoPanel.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+  });
+  closeButton.addEventListener("click", () => {
+    demoPanel.hidden = true;
+    openButton.focus();
+  });
+  window.addEventListener("message", (event) => {
+    if (event.origin !== location.origin || event.source !== frame.contentWindow) return;
+    if (event.data?.type === "aguidev-demo-height" && Number.isFinite(event.data.height)) {
+      frame.style.height = Math.max(700, Math.min(12000, event.data.height)) + "px";
+    }
+  });
+})();
