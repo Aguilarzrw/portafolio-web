@@ -158,9 +158,9 @@ links.forEach((a) => {
       const safe = sourceLine.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
       const highlighted = safe
         .replace(/('[^']*')/g, '<span class="code-green">$1</span>')
-        .replace(/(#(?:[0-9a-fA-F]{3,8})\\b)/g, '<span class="code-blue">$1</span>')
-        .replace(/\\b(const|async|await|return|class|constructor|this|new|function)\\b/g, '<span class="code-purple">$1</span>')
-        .replace(/\\b(display|place-items|color|perspective|transform|border-color|padding)\\b/g, '<span class="code-yellow">$1</span>');
+        .replace(/(#(?:[0-9a-fA-F]{3,8})\b)/g, '<span class="code-blue">$1</span>')
+        .replace(/\b(const|async|await|return|class|constructor|this|new|function)\b/g, '<span class="code-purple">$1</span>')
+        .replace(/\b(display|place-items|color|perspective|transform|border-color|padding)\b/g, '<span class="code-yellow">$1</span>');
       code.innerHTML = highlighted;
       cursor.remove();
       line.dataset.complete = "true";
