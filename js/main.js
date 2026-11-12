@@ -105,7 +105,10 @@ links.forEach((a) => {
   if (!hero || !("IntersectionObserver" in window)) return;
   const terminals = [...document.querySelectorAll("[data-code-terminal]")];
   let heroVisible = false;
-  const states = terminals.map((terminal) => ({
+  const states = terminals.map((terminal) => {
+    // El HTML sirve como respaldo estático; al iniciar, limpiamos esa muestra para evitar reutilizar nodos sin .code-live-text.
+    terminal.replaceChildren();
+    return ({
     terminal,
     source: programs[terminal.dataset.codeTerminal],
     lineIndex: 0,
@@ -113,7 +116,8 @@ links.forEach((a) => {
     lineNumber: 1,
     timer: 0,
     active: false
-  })).filter((state) => state.source);
+  });
+  }).filter((state) => state.source);
 
   const stop = (state) => {
     state.active = false;
