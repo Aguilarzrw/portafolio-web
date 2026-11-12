@@ -57,7 +57,6 @@
 }
 </script>
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
-<link rel="preload" as="image" type="image/webp" href="assets/img/proyecto-bramdon-640.webp" imagesrcset="assets/img/proyecto-bramdon-640.webp 640w, assets/img/proyecto-bramdon.webp 1200w" imagesizes="(max-width: 960px) 90vw, 540px">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,33 +88,56 @@
 
 <main id="main">
 
-<section id="inicio" class="hero">
-  <div class="container hero__inner">
-    <div class="hero__intro">
-      <p class="hero__eyebrow" data-hero>Reyniel Aguilar · Diseño y desarrollo web</p>
-      <h1 class="hero__title" data-hero>
-        Webs a medida que <em class="hero__accent">convierten visitas en clientes</em>
-      </h1>
-      <p class="hero__text" data-hero>
-        Diseño y desarrollo webs a medida para marcas, artistas y negocios en
-        Venezuela: rápidas, adaptadas al celular y listas para que te contacten.
-      </p>
-      <div class="hero__actions" data-hero>
-        <a href="#projects" class="btn btn--primary">Ver proyectos</a>
-        <a href="#contact" class="btn btn--ghost">Cotizar mi web</a>
+<section id="inicio" class="hero hero--code">
+  <div class="hero-code-scene" aria-hidden="true">
+    <div class="hero-code-glow hero-code-glow--one"></div>
+    <div class="hero-code-glow hero-code-glow--two"></div>
+    <div class="code-window code-window--left">
+      <div class="code-window__top"><span></span><span></span><span></span><b>app.js</b></div>
+      <div class="code-window__body">
+        <p><i>01</i><span class="code-purple">const</span> <span class="code-blue">createExperience</span> = <span class="code-yellow">()</span> =&gt; {</p>
+        <p><i>02</i>&nbsp;&nbsp;<span class="code-purple">return</span> {</p>
+        <p><i>03</i>&nbsp;&nbsp;&nbsp;&nbsp;design: <span class="code-green">'intuitive'</span>,</p>
+        <p><i>04</i>&nbsp;&nbsp;&nbsp;&nbsp;speed: <span class="code-green">'optimized'</span>,</p>
+        <p><i>05</i>&nbsp;&nbsp;&nbsp;&nbsp;ideas: <span class="code-blue">transform</span>(<span class="code-yellow">)</span></p>
+        <p><i>06</i>&nbsp;&nbsp;};</p>
+        <p><i>07</i>}; <span class="code-cursor"></span></p>
       </div>
-      <p class="status" data-hero><span class="status__dot" aria-hidden="true"></span>Disponible para nuevos proyectos</p>
-      <ul class="hero__facts" data-hero>
-        <li>2 sitios en vivo</li>
-        <li>Entrega desde 1 semana</li>
-        <li>Cotización sin compromiso</li>
+    </div>
+    <div class="code-window code-window--right">
+      <div class="code-window__top"><span></span><span></span><span></span><b>interface.css</b></div>
+      <div class="code-window__body">
+        <p><i>01</i><span class="code-purple">.digital-world</span> {</p>
+        <p><i>02</i>&nbsp;&nbsp;display: <span class="code-green">flex</span>;</p>
+        <p><i>03</i>&nbsp;&nbsp;align-items: <span class="code-yellow">center</span>;</p>
+        <p><i>04</i>&nbsp;&nbsp;color: <span class="code-blue">#78d8f5</span>;</p>
+        <p><i>05</i>&nbsp;&nbsp;future: <span class="code-green">infinite</span>;</p>
+        <p><i>06</i>}</p>
+        <p><i>07</i><span class="code-cursor"></span></p>
+      </div>
+    </div>
+    <div class="code-orbit code-orbit--one"></div>
+    <div class="code-orbit code-orbit--two"></div>
+    <span class="code-symbol code-symbol--one">&lt;/&gt;</span>
+    <span class="code-symbol code-symbol--two">{ }</span>
+    <span class="code-symbol code-symbol--three">01</span>
+  </div>
+  <div class="container hero__inner hero__inner--center">
+    <div class="hero__intro hero__intro--center">
+      <p class="hero__eyebrow">Desarrollo web · Diseño · Innovación</p>
+      <h1 class="hero__title">Diseñamos experiencias.<br><em class="hero__accent">Desarrollamos soluciones.</em></h1>
+      <p class="hero__text">Creamos experiencias digitales y herramientas web que ayudan a marcas, profesionales y negocios a presentar sus ideas, conectar con sus clientes y crecer.</p>
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary">Explorar proyectos</a>
+        <a href="#demos" class="btn btn--ghost">Probar nuestras demos</a>
+      </div>
+      <p class="status"><span class="status__dot" aria-hidden="true"></span>Disponible para nuevos proyectos</p>
+      <ul class="hero__facts">
+        <li>Diseño centrado en las personas</li>
+        <li>Desarrollo optimizado</li>
+        <li>Soluciones a medida</li>
       </ul>
     </div>
-
-    <a href="#projects" class="hero__stack" id="heroStack" aria-label="Ver proyectos">
-      <img class="hero__shot hero__shot--back" src="assets/img/proyecto-ranchera-640.webp" srcset="assets/img/proyecto-ranchera-640.webp 640w, assets/img/proyecto-ranchera.webp 1200w" sizes="(max-width: 960px) 80vw, 480px" alt="" width="1200" height="630">
-      <img class="hero__shot hero__shot--front" src="assets/img/proyecto-bramdon-640.webp" srcset="assets/img/proyecto-bramdon-640.webp 640w, assets/img/proyecto-bramdon.webp 1200w" sizes="(max-width: 960px) 80vw, 480px" alt="" width="1200" height="630" fetchpriority="high">
-    </a>
   </div>
 </section>
 
