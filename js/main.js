@@ -108,9 +108,9 @@ function initMotion() {
   });
 }
 
-if (root.classList.contains("has-motion")) {
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches && window.Motion) {
+  root.classList.add("has-motion");
   try {
-    if (!window.Motion) throw new Error("Motion no cargó");
     initMotion();
   } catch {
     root.classList.remove("has-motion");
