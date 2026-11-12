@@ -46,9 +46,10 @@ links.forEach((a) => {
   if (section) sectionObserver.observe(section);
 });
 
-// ===== Terminales del Hero: escritura continua, ligera y en bucle =====
+// ===== Terminales del Hero: escritura continua con pausa inteligente =====
 (() => {
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return; // El HTML conserva una muestra estática del código.
   const programs = {
     javascript: [
       "const buildFuture = async () => {",
@@ -99,39 +100,76 @@ links.forEach((a) => {
       ""
     ]
   };
-  document.querySelectorAll("[data-code-terminal]").forEach((terminal) => {
-    const source = programs[terminal.dataset.codeTerminal];
-    if (!source) return;
-    let lineIndex = 0, charIndex = 0, lineNumber = 1;
-    terminal.innerHTML = "";
-    const type = () => {
-      if (!document.documentElement.contains(terminal)) return;
-      if (lineIndex >= source.length) { lineIndex = 0; charIndex = 0; }
-      const sourceLine = source[lineIndex];
-      let line = terminal.lastElementChild;
-      if (!line || line.dataset.complete === "true") {
-        line = document.createElement("p");
-        line.className = "code-line";
-        const number = document.createElement("i");
-        number.textContent = String(lineNumber).padStart(2,"0");
-        const code = document.createElement("span");
-        code.className = "code-live-text";
-        line.append(number,code);
-        terminal.append(line);
-        lineNumber = lineNumber >= 99 ? 1 : lineNumber + 1;
-        if (terminal.children.length > 8) terminal.firstElementChild.remove();
-      }
-      const code = line.querySelector(".code-live-text");
-      code.textContent = sourceLine.slice(0,++charIndex);
-      if (charIndex >= sourceLine.length) {
-        line.dataset.complete = "true";
-        lineIndex++;charIndex = 0;
-        setTimeout(type, sourceLine === "" ? 260 : 430);
-      } else {
-        setTimeout(type, 24 + Math.random() * 30);
-      }
-    };
-    type();
+
+  const hero = document.getElementById("inicio");
+  if (!hero || !("IntersectionObserver" in window)) return;
+  const terminals = [...document.querySelectorAll("[data-code-terminal]")];
+  const states = terminals.map((terminal) => ({
+    terminal,
+    source: programs[terminal.dataset.codeTerminal],
+    lineIndex: 0,
+    charIndex: 0,
+    lineNumber: 1,
+    timer: 0,
+    active: false
+  })).filter((state) => state.source);
+
+  const stop = (state) => {
+    state.active = false;
+    window.clearTimeout(state.timer);
+    state.timer = 0;
+  };
+
+  const tick = (state) => {
+    if (!state.active || document.hidden) return;
+    const { terminal, source } = state;
+    if (state.lineIndex >= source.length) {
+      state.lineIndex = 0;
+      state.charIndex = 0;
+    }
+    const sourceLine = source[state.lineIndex];
+    let line = terminal.lastElementChild;
+    if (!line || line.dataset.complete === "true") {
+      line = document.createElement("p");
+      line.className = "code-line";
+      const number = document.createElement("i");
+      number.textContent = String(state.lineNumber).padStart(2, "0");
+      const code = document.createElement("span");
+      code.className = "code-live-text";
+      line.append(number, code);
+      terminal.append(line);
+      state.lineNumber = state.lineNumber >= 99 ? 1 : state.lineNumber + 1;
+      if (terminal.children.length > 8) terminal.firstElementChild.remove();
+    }
+
+    const code = line.querySelector(".code-live-text");
+    state.charIndex += 1;
+    code.textContent = sourceLine.slice(0, state.charIndex);
+
+    if (state.charIndex >= sourceLine.length) {
+      line.dataset.complete = "true";
+      state.lineIndex += 1;
+      state.charIndex = 0;
+      state.timer = window.setTimeout(() => tick(state), sourceLine === "" ? 260 : 430);
+    } else {
+      state.timer = window.setTimeout(() => tick(state), 38);
+    }
+  };
+
+  const start = (state) => {
+    if (state.active || document.hidden) return;
+    state.active = true;
+    state.timer = window.setTimeout(() => tick(state), 180);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.some((entry) => entry.isIntersecting);
+    states.forEach((state) => visible ? start(state) : stop(state));
+  }, { threshold: 0.08 });
+  observer.observe(hero);
+
+  document.addEventListener("visibilitychange", () => {
+    states.forEach((state) => document.hidden ? stop(state) : start(state));
   });
 })();
 
@@ -162,7 +200,7 @@ function initMotion() {
   }, { amount: 0.2 });
 
   // Cada tarjeta se observa individualmente: evita que una cuadrícula alta quede invisible en móviles.
-  document.querySelectorAll(".services [data-stagger], .process [data-stagger], .skills [data-stagger]").forEach((item, index) => {
+  document.querySelectorAll(".process [data-stagger], .skills [data-stagger]").forEach((item, index) => {
     inView(item, () => {
       animate(item, { opacity: [0, 1], y: [20, 0] }, { ...enter, delay: Math.min(index * 0.06, 0.24) });
     }, { amount: 0.12 });
@@ -174,7 +212,7 @@ function initMotion() {
     return () => animate(el, { y: 0, scale: 1 }, spring);
   });
   lift(".case__media", -4, 1.015);
-  lift(".service", -4);
+  // Las tarjetas de servicios no se elevan: menos trabajo de composición al pasar el cursor.
   lift(".skill-item", -2);
   lift(".btn, .contact-btn", -2);
 
