@@ -201,7 +201,7 @@ function initMotion() {
   }, { amount: 0.2 });
 
   // Cada tarjeta se observa individualmente: evita que una cuadrícula alta quede invisible en móviles.
-  document.querySelectorAll(".process [data-stagger], .skills [data-stagger]").forEach((item, index) => {
+  document.querySelectorAll(".services [data-stagger], .process [data-stagger], .skills [data-stagger]").forEach((item, index) => {
     inView(item, () => {
       animate(item, { opacity: [0, 1], y: [20, 0] }, { ...enter, delay: Math.min(index * 0.06, 0.24) });
     }, { amount: 0.12 });
