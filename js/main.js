@@ -104,6 +104,7 @@ links.forEach((a) => {
   const hero = document.getElementById("inicio");
   if (!hero || !("IntersectionObserver" in window)) return;
   const terminals = [...document.querySelectorAll("[data-code-terminal]")];
+  let heroVisible = false;
   const states = terminals.map((terminal) => ({
     terminal,
     source: programs[terminal.dataset.codeTerminal],
@@ -157,14 +158,14 @@ links.forEach((a) => {
   };
 
   const start = (state) => {
-    if (state.active || document.hidden) return;
+    if (state.active || document.hidden || !heroVisible) return;
     state.active = true;
     state.timer = window.setTimeout(() => tick(state), 180);
   };
 
   const observer = new IntersectionObserver((entries) => {
-    const visible = entries.some((entry) => entry.isIntersecting);
-    states.forEach((state) => visible ? start(state) : stop(state));
+    heroVisible = entries.some((entry) => entry.isIntersecting);
+    states.forEach((state) => heroVisible ? start(state) : stop(state));
   }, { threshold: 0.08 });
   observer.observe(hero);
 
