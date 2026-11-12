@@ -46,6 +46,134 @@ links.forEach((a) => {
   if (section) sectionObserver.observe(section);
 });
 
+// ===== Terminales del Hero: escritura continua con pausa inteligente =====
+(() => {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return; // El HTML conserva una muestra estática del código.
+  const programs = {
+    javascript: [
+      "const buildFuture = async () => {",
+      "  const vision = await ideas.collect();",
+      "  const experience = {",
+      "    design: 'human-centered',",
+      "    performance: 'optimized',",
+      "    details: 'intentional',",
+      "  };",
+      "  return launch(experience);",
+      "};",
+      "",
+      "buildFuture().then(project => {",
+      "  console.log('New experience:', project);",
+      "});",
+      "",
+      "class DigitalProduct {",
+      "  constructor(problem, people) {",
+      "    this.problem = problem;",
+      "    this.people = people;",
+      "  }",
+      "  create() { return solutions.build(this); }",
+      "}",
+      ""
+    ],
+    css: [
+      ".digital-world {",
+      "  display: grid;",
+      "  place-items: center;",
+      "  color: #A78BFA;",
+      "  perspective: 1200px;",
+      "}",
+      "",
+      ".experience:hover {",
+      "  transform: translateY(-4px);",
+      "  border-color: var(--violet);",
+      "}",
+      "",
+      "@media (max-width: 768px) {",
+      "  .interface { padding: 1rem; }",
+      "  .motion { reduced: true; }",
+      "}",
+      "",
+      ":root {",
+      "  --graphite: #101116;",
+      "  --violet: #A78BFA;",
+      "}",
+      ""
+    ]
+  };
+
+  const hero = document.getElementById("inicio");
+  if (!hero || !("IntersectionObserver" in window)) return;
+  const terminals = [...document.querySelectorAll("[data-code-terminal]")];
+  let heroVisible = false;
+  const states = terminals.map((terminal) => ({
+    terminal,
+    source: programs[terminal.dataset.codeTerminal],
+    lineIndex: 0,
+    charIndex: 0,
+    lineNumber: 1,
+    timer: 0,
+    active: false
+  })).filter((state) => state.source);
+
+  const stop = (state) => {
+    state.active = false;
+    window.clearTimeout(state.timer);
+    state.timer = 0;
+  };
+
+  const tick = (state) => {
+    if (!state.active || document.hidden) return;
+    const { terminal, source } = state;
+    if (state.lineIndex >= source.length) {
+      state.lineIndex = 0;
+      state.charIndex = 0;
+    }
+    const sourceLine = source[state.lineIndex];
+    let line = terminal.lastElementChild;
+    if (!line || line.dataset.complete === "true") {
+      line = document.createElement("p");
+      line.className = "code-line";
+      const number = document.createElement("i");
+      number.textContent = String(state.lineNumber).padStart(2, "0");
+      const code = document.createElement("span");
+      code.className = "code-live-text";
+      line.append(number, code);
+      terminal.append(line);
+      state.lineNumber = state.lineNumber >= 99 ? 1 : state.lineNumber + 1;
+      if (terminal.children.length > 8) terminal.firstElementChild.remove();
+    }
+
+    const code = line.querySelector(".code-live-text");
+    state.charIndex += 1;
+    code.textContent = sourceLine.slice(0, state.charIndex);
+
+    if (state.charIndex >= sourceLine.length) {
+      line.dataset.complete = "true";
+      state.lineIndex += 1;
+      state.charIndex = 0;
+      state.timer = window.setTimeout(() => tick(state), sourceLine === "" ? 260 : 430);
+    } else {
+      state.timer = window.setTimeout(() => tick(state), 38);
+    }
+  };
+
+  const start = (state) => {
+    if (state.active || document.hidden || !heroVisible) return;
+    state.active = true;
+    state.timer = window.setTimeout(() => tick(state), 180);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    heroVisible = entries.some((entry) => entry.isIntersecting);
+    states.forEach((state) => heroVisible ? start(state) : stop(state));
+  }, { threshold: 0.08 });
+  observer.observe(hero);
+
+  document.addEventListener("visibilitychange", () => {
+    states.forEach((state) => document.hidden ? stop(state) : start(state));
+  });
+})();
+
 // ===== Movimiento (Motion) =====
 // Sin Motion (CDN caído) o con movimiento reducido, todo queda visible y estático.
 const root = document.documentElement;
@@ -73,7 +201,7 @@ function initMotion() {
   }, { amount: 0.2 });
 
   // Cada tarjeta se observa individualmente: evita que una cuadrícula alta quede invisible en móviles.
-  document.querySelectorAll(".services [data-stagger], .process [data-stagger], .skills [data-stagger]").forEach((item, index) => {
+  document.querySelectorAll(".process [data-stagger], .skills [data-stagger]").forEach((item, index) => {
     inView(item, () => {
       animate(item, { opacity: [0, 1], y: [20, 0] }, { ...enter, delay: Math.min(index * 0.06, 0.24) });
     }, { amount: 0.12 });
@@ -85,7 +213,7 @@ function initMotion() {
     return () => animate(el, { y: 0, scale: 1 }, spring);
   });
   lift(".case__media", -4, 1.015);
-  lift(".service", -4);
+  // Las tarjetas de servicios no se elevan: menos trabajo de composición al pasar el cursor.
   lift(".skill-item", -2);
   lift(".btn, .contact-btn", -2);
 
