@@ -46,6 +46,95 @@ links.forEach((a) => {
   if (section) sectionObserver.observe(section);
 });
 
+// ===== Terminales del Hero: escritura continua, ligera y en bucle =====
+(() => {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const programs = {
+    javascript: [
+      "const buildFuture = async () => {",
+      "  const vision = await ideas.collect();",
+      "  const experience = {",
+      "    design: 'human-centered',",
+      "    performance: 'optimized',",
+      "    details: 'intentional',",
+      "  };",
+      "  return launch(experience);",
+      "};",
+      "",
+      "buildFuture().then(project => {",
+      "  console.log('New experience:', project);",
+      "});",
+      "",
+      "class DigitalProduct {",
+      "  constructor(problem, people) {",
+      "    this.problem = problem;",
+      "    this.people = people;",
+      "  }",
+      "  create() { return solutions.build(this); }",
+      "}",
+      ""
+    ],
+    css: [
+      ".digital-world {",
+      "  display: grid;",
+      "  place-items: center;",
+      "  color: #A78BFA;",
+      "  perspective: 1200px;",
+      "}",
+      "",
+      ".experience:hover {",
+      "  transform: translateY(-4px);",
+      "  border-color: var(--violet);",
+      "}",
+      "",
+      "@media (max-width: 768px) {",
+      "  .interface { padding: 1rem; }",
+      "  .motion { reduced: true; }",
+      "}",
+      "",
+      ":root {",
+      "  --graphite: #101116;",
+      "  --violet: #A78BFA;",
+      "}",
+      ""
+    ]
+  };
+  document.querySelectorAll("[data-code-terminal]").forEach((terminal) => {
+    const source = programs[terminal.dataset.codeTerminal];
+    if (!source) return;
+    let lineIndex = 0, charIndex = 0, lineNumber = 1;
+    terminal.innerHTML = "";
+    const type = () => {
+      if (!document.documentElement.contains(terminal)) return;
+      if (lineIndex >= source.length) { lineIndex = 0; charIndex = 0; }
+      const sourceLine = source[lineIndex];
+      let line = terminal.lastElementChild;
+      if (!line || line.dataset.complete === "true") {
+        line = document.createElement("p");
+        line.className = "code-line";
+        const number = document.createElement("i");
+        number.textContent = String(lineNumber).padStart(2,"0");
+        const code = document.createElement("span");
+        code.className = "code-live-text";
+        line.append(number,code);
+        terminal.append(line);
+        lineNumber = lineNumber >= 99 ? 1 : lineNumber + 1;
+        if (terminal.children.length > 8) terminal.firstElementChild.remove();
+      }
+      const code = line.querySelector(".code-live-text");
+      code.textContent = sourceLine.slice(0,++charIndex);
+      if (charIndex >= sourceLine.length) {
+        line.dataset.complete = "true";
+        lineIndex++;charIndex = 0;
+        setTimeout(type, sourceLine === "" ? 260 : 430);
+      } else {
+        setTimeout(type, 24 + Math.random() * 30);
+      }
+    };
+    type();
+  });
+})();
+
 // ===== Movimiento (Motion) =====
 // Sin Motion (CDN caído) o con movimiento reducido, todo queda visible y estático.
 const root = document.documentElement;
