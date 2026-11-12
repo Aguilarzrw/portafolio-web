@@ -24,7 +24,14 @@ document.addEventListener("keydown", (e) => {
 // Sombra en la barra al hacer scroll
 const onScroll = () => navbar.classList.toggle("is-scrolled", window.scrollY > 8);
 onScroll();
-addEventListener("scroll", onScroll, { passive: true });
+let scrollFrame = 0;
+addEventListener("scroll", () => {
+  if (scrollFrame) return;
+  scrollFrame = requestAnimationFrame(() => {
+    onScroll();
+    scrollFrame = 0;
+  });
+}, { passive: true });
 
 // Enlace activo según la sección visible
 const links = [...navLinks.querySelectorAll("a")];
@@ -101,9 +108,9 @@ function initMotion() {
   });
 }
 
-if (root.classList.contains("has-motion")) {
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches && window.Motion) {
+  root.classList.add("has-motion");
   try {
-    if (!window.Motion) throw new Error("Motion no cargó");
     initMotion();
   } catch {
     root.classList.remove("has-motion");
@@ -180,3 +187,33 @@ if (contactForm) {
     }
   });
 }
+
+
+// ===== Demo NÓRDEN integrada: el catálogo solo se descarga al abrirlo =====
+(() => {
+  const openButton = document.querySelector("[data-demo-open]");
+  const demoPanel = document.getElementById("demo-live");
+  const frame = document.getElementById("nordenFrame");
+  const closeButton = document.querySelector("[data-demo-close]");
+  if (!openButton || !demoPanel || !frame || !closeButton) return;
+  let loaded = false;
+  openButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    demoPanel.hidden = false;
+    if (!loaded) {
+      frame.src = "demos/norden/index.html";
+      loaded = true;
+    }
+    demoPanel.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+  });
+  closeButton.addEventListener("click", () => {
+    demoPanel.hidden = true;
+    openButton.focus();
+  });
+  window.addEventListener("message", (event) => {
+    if (event.origin !== location.origin || event.source !== frame.contentWindow) return;
+    if (event.data?.type === "aguidev-demo-height" && Number.isFinite(event.data.height)) {
+      frame.style.height = Math.max(700, Math.min(12000, event.data.height)) + "px";
+    }
+  });
+})();
