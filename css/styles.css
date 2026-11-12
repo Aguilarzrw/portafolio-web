@@ -1015,3 +1015,37 @@ body {
   .hero__actions .btn { width:100%;text-align:center; }
   .service-terms { padding:1.25rem; }
 }
+
+
+/* ===== Vitrina de demos interactivos ===== */
+.demo-showcase { background:linear-gradient(180deg,#0a1220,#0b1626);border-block:1px solid rgba(120,216,245,.1); }
+.demo-card {
+  display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden;margin-top:2.5rem;
+  border:1px solid #2a405b;border-radius:16px;
+  background:linear-gradient(145deg,#142238,#0b1728);
+  box-shadow:0 24px 65px rgba(0,0,0,.25);
+}
+.demo-card__visual {
+  min-height:360px;position:relative;display:grid;place-items:center;padding:3rem;
+  overflow:hidden;background:radial-gradient(circle at 50% 45%,rgba(91,190,222,.2),transparent 60%),#0a1423;
+}
+.demo-card__label { position:absolute;top:22px;left:24px;font-size:.65rem;letter-spacing:.14em;color:#8ce5f5;font-weight:700; }
+.demo-card__mock { width:100%;max-width:430px;padding:17px;border:1px solid #344b68;background:#0d1a2c;box-shadow:0 25px 60px rgba(0,0,0,.38);transform:rotate(-2deg); }
+.demo-card__mock-top { display:flex;justify-content:space-between;align-items:center;padding-bottom:13px;border-bottom:1px solid #2a405b;color:#edf3ff;font-size:.7rem;letter-spacing:.1em; }
+.demo-card__mock-top span { color:#8ce5f5;font-size:.5rem; }
+.demo-card__mock-hero { display:grid;gap:13px;padding:25px 10px 20px; }
+.demo-card__mock-hero span { color:#8ce5f5;font-size:.48rem;letter-spacing:.12em; }
+.demo-card__mock-hero strong { font-family:var(--font-heading);font-size:clamp(1.4rem,3vw,2.2rem);line-height:1.05;color:#edf3ff; }
+.demo-card__mock-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:9px; }
+.demo-card__mock-grid i { display:block;height:74px;background:linear-gradient(145deg,#293e58,#15263c);border:1px solid #354c67; }
+.demo-card__mock-grid i:nth-child(2) { background:linear-gradient(145deg,#38566a,#1b3044); }
+.demo-card__body { display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(2rem,5vw,4rem);gap:1rem; }
+.demo-card__body h3 { font-family:var(--font-heading);font-size:clamp(1.6rem,3vw,2.25rem);line-height:1.12; }
+.demo-card__body>p:not(.case__type) { color:#a5b4ca;line-height:1.8;font-size:.95rem; }
+.demo-card__body .case__tags { margin:0 0 .5rem; }
+@media(max-width:768px) {
+  .demo-card { grid-template-columns:1fr; }
+  .demo-card__visual { min-height:280px;padding:2.5rem 1.5rem; }
+  .demo-card__body { padding:1.5rem; }
+  .demo-card__body .btn { width:100%;text-align:center; }
+}
