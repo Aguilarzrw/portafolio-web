@@ -211,9 +211,16 @@
         <h3>Una tienda que puedes explorar.</h3>
         <p>Prueba un catálogo comercial con productos ficticios, búsqueda, filtros, fichas de producto, bolsa de compra y un panel de gestión de muestra. Los pedidos no generan pagos reales.</p>
         <ul class="case__tags"><li>Catálogo y filtros</li><li>Carrito de muestra</li><li>Panel de gestión</li><li>Diseño adaptable</li></ul>
-        <a class="btn btn--primary" href="https://aguilarzrw.github.io/RepoPrueba/demo-aguidev/" target="_blank" rel="noopener">Probar catálogo interactivo <span aria-hidden="true">↗</span></a>
+        <a class="btn btn--primary" href="#demo-live" data-demo-open>Probar catálogo interactivo <span aria-hidden="true">↓</span></a>
       </div>
     </article>
+    <div class="demo-live" id="demo-live" hidden>
+      <div class="demo-live__bar">
+        <div><span class="demo-live__dot"></span><strong>NÓRDEN / DEMO INTERACTIVA</strong><small>Experiencia de prueba integrada en aguidev</small></div>
+        <button class="btn btn--ghost demo-live__close" type="button" data-demo-close>Cerrar demo ×</button>
+      </div>
+      <iframe id="nordenFrame" title="Demo interactiva NÓRDEN, catálogo digital" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
   </div>
 </section>
 
